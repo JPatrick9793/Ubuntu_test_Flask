@@ -1,0 +1,27 @@
+<!doctype html>
+
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}">
+<title>
+  My Flask App
+</title>
+</head>
+
+<body>
+  <form action="/create" method='post'>
+    <div><input type="text" name="address" placeholder="Address"></div>
+    <div><input type="text" name="city" placeholder="City"></div>
+    <div><input type="text" name="country" placeholder="Country"></div>
+    <div><input type="submit" value="Submit"></div>
+  </form>
+  
+  <div>Places:</div>
+  {% for place in places %}
+  <li>{{place.id}}: {{place.address}}, {{place.city}}, {{place.country}}</li>
+  {% endfor %}
+  <div></div> 
+</body>
+
+</html>
